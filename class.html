@@ -1,5 +1,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="document.json"></script>
   <!-- Use latest PDF.js build from Github -->
   <script type="text/javascript" src="js/pdf.js"></script>
 <!DOCTYPE html>
@@ -258,6 +259,13 @@
        
     });
 
+    //$.getJSON("document.json", function(json) {
+   // var datos = JSON.parse(data);
+   
+    var jvideo = data.video;
+     alert(jvideo.height);
+//});
+
     
 
     //
@@ -326,10 +334,10 @@
     //
     // Asynchronously download PDF as an ArrayBuffer
     //
-    PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
+PDFJS.getDocument(url)
+    .then(function getPdfHelloWorld(_pdfDoc) {
       pdfDoc = _pdfDoc;
       renderPage(pageNum);
-      document.onkeyup = handleArrowKeys;
     });
   </script>  
 
