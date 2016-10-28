@@ -1,26 +1,273 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
+<script type="text/javascript" src="document.js"></script>
   <!-- Use latest PDF.js build from Github -->
   <script type="text/javascript" src="js/pdf.js"></script>
+<!DOCTYPE html>
+<html lang="es">
+	<head>
+		<title>Classrooom</title>
+         <meta charset="UTF-8">
+		<link rel="stylesheet" href="main.css">
+        <link rel="stylesheet" href="css/estilo.css">
+        <link rel="stylesheet" href="fonts/style.css">
+	</head>
 
 
-<html>
 <body>
-  <div>
+    
+
+<table id="superior">
+    <tr>
+        <td>
+           <img src="" style="width:42px;height:42px;border:0;"> 
+        </td>
+
+        <td>
+            Nombre del curso
+        </td>
+    </tr>
+
+</table>
+
+<table>
+        <tr>
+
+            <td id="lat">
+
+                <table>
+                    <tr>
+                        <td>
+            <a href="class.html">
+             <img  src="images/calendario.jpg" style="width:42px;height:42px;border:0;">
+            </a>
+            </td>
+                    </tr>
+                      <tr>
+                        <td>
+            <a href="class.html">
+             <img src="images/video.jpg" style="width:42px;height:42px;border:0;">
+            </a>
+            </td>
+                    </tr>
+                     <tr>
+                        <td>
+            <a href="class.html">
+             <img src="images/video.jpg" style="width:42px;height:42px;border:0;">
+            </a>
+            </td>
+                    </tr>
+                </table>
+              
+
+            </td>
+            
+            <td>
+
+
+<h1> Classrooom </h1>
+
+
+<table id="tablaIcon">
+    <tr>
+        <td>
+            <a href="class.html">
+             <img  src="images/video.jpg">
+            </a>
+
+        </td>
+        <td>
+             <a href="class.html">
+             <img src="images/perfil.jpg">
+            </a>
+        </td>
+        <td>
+            <a href="class.html">
+             <img src="images/video.jpg">
+            </a>
+
+        </td>
+        <td>
+             <a href="class.html">
+             <img src="images/perfil.jpg" >
+            </a>
+        </td>
+    </tr>
+
+  
+</table>
+
+<br>
+ <h5> La actividad para el dia de hoy</h5>
+
+<table id="tablaContent">
+ <br>
+    
+<tr>
+    <td id="videoStyle">
+
+        <div id="controls1" class="inputs">
+            <ul>
+            <li>
+            <video id="video" width="100%" height="380" preload="auto">
+            <track id="subtes" label="Español" kind="subtitles" srclang="es" src="subt/subs_es.vtt">
+            <track id="subten" label="Ingles" kind="subtitles" srclang="en" src="subt/subs_en.vtt">
+            </video></li>
+        <li>
+        <ul class="nav" >
+            <li><a id="atras" class="icon-controller-fast-backward"></a></li>
+            <li><a id="play-pause" class="icon-controller-play"></a></li>
+            <li><a id="adela" class="icon-controller-fast-forward"></a></li>
+            <li><label id="nume" for="conteo">
+                    <span id="horas"></span><span id="minutos">00</span>:<span id="segundos">00</span>/<span id="minutos2">0</span>:<span id="segundos2">0</span>
+                </label></li>
+            <li><input type="range" id="seek-bar" value="0"></li>
+            <li><a id="mute" class="icon-sound"></a></li>
+            <li><input type="range" id="volume-bar" min="0" max="1" step="0.1" value="1"></li>
+            <li><a class="icon-cog"></a>
+                        <ul>
+                        <li><a id="repetir" >No Repetir</a>
+                        <ul></ul>
+                        </li>
+                        <li><a>Velocidad</a>
+                            <ul>
+                            <li><a id="slow">Slow</a></li>
+                            <li><a id="normal">Normal</a></li>
+                            <li><a id="fast">Fast</a></li>
+                            </ul>
+                       </li>
+                        <li><a id="captions">Subtítulos</a>
+                                <ul>
+                            <li><a id="es">Español</a></li>
+                            <li><a id="en">English</a></li>
+                            <li><a id="off">Off</a></li>
+                            </ul>  
+                        </li>
+                        <ul></ul>
+                        <li><a>Tamaño</a>
+                            <ul>
+                            <li><a id="small">Small</a></li>
+                            <li><a id="medium">Medium</a></li>
+                            <li><a id="full-screen">Full Sreen</a></li>
+                            </ul>
+                        </li>
+                        <li><a>Calidad</a>
+                            <ul>                 
+                            <li><a id="mbaja">144p</a></li>
+                            <li><a id="baja">244p</a></li>
+                            <li><a id="buena">360p</a></li>
+                            <li><a id ="excelente">480p</a></li>
+                            <li><a id ="excelentea">720p</a></li>
+                            <li><a id ="excelenteb">1080p</a></li>
+                            <li><a id ="excelentec">1440p</a></li>
+                            </ul>
+                        </li>
+                        </ul>
+         </li>       
+    </ul></li>
+    </ul>
+    <!--</figure>-->
+    </div>
+ <!--
+    Aqui Video
+  -->
+
+     </td>
+     <td id="presentacion">
+ <!--
+    Aqui Presentador de documentos
+        -->
+
+        <div>
     <button id="prev" onclick="goPrevious()">Previous</button>
     <button id="next" onclick="goNext()">Next</button>
     &nbsp; &nbsp;
     <span>Page: <span id="page_num"></span> / <span id="page_count"></span></span>
   </div>
-  
-  <div>
+
+   <div>
     <canvas id="the-canvas" style="border:1px solid black"></canvas>
   </div>
+     </td>
+   </tr>
+
+   <tr>
+       <td>
+
+          <h3>Transcripcion</h3>
+        <!--
+    Aqui Transcripcion
+        -->
+        </td>
+    
+       <td>
+        <h3>Recursos relacionados </h3>
+
+        <ul class="relacionados">
+        
+            <li><a id="rel1">Recurso relacionado 1</a></li>
+            <br>
+            <li><a id="rel2">Recurso relacionado 2</a></li>
+            <br>
+            <li><a>Recurso relacionado 3</a></li>
+
+        </ul>
+
+        
+        <!--
+    Aqui Relacionados 
+         -->
+        </td>
+    
+  </tr>
+
+</table>
+                
+            </td>
+            
+        </tr>
+
+       
+    </table>
+
+<script src="js/mireproductor.js"></script>
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.js"></script>
+<Files mysubtitle.vtt>
+	<ForceType text/vtt;charset=utf-8>
+</Files>
 
 
+ <script type="text/javascript">
 
-  
-  <script type="text/javascript">
+ var videoPlayer = document.getElementById("video");
+
+    var tema1 = document.getElementById("rel1");
+    tema1.addEventListener("click", function(){
+        pageNum =5;
+        renderPage(pageNum);
+        videoPlayer.currentTime = 40;
+       
+    });
+
+      var tema2 = document.getElementById("rel2");
+    tema2.addEventListener("click", function(){
+        pageNum =8;
+        renderPage(pageNum);;
+        videoPlayer.currentTime = 60;
+       
+    });
+
+    //$.getJSON("document.json", function(json) {
+   // var datos = JSON.parse(data);
+   
+   // var jvideo = data.video;
+    // alert(jvideo.height);
+//});
+
+    
+
     //
     // NOTE: 
     // Modifying the URL below to another server will likely *NOT* work. Because of browser
@@ -93,6 +340,7 @@
       document.onkeyup = handleArrowKeys;
     });
   </script>  
+
 </body>
 
 </html>

@@ -1,6 +1,6 @@
 <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"></script>
 <script type="text/javascript" src="main.js"></script>
-<script type="text/javascript" src="document.json"></script>
+<script type="text/javascript" src="document.js"></script>
   <!-- Use latest PDF.js build from Github -->
   <script type="text/javascript" src="js/pdf.js"></script>
 <!DOCTYPE html>
@@ -262,8 +262,8 @@
     //$.getJSON("document.json", function(json) {
    // var datos = JSON.parse(data);
    
-    var jvideo = data.video;
-     alert(jvideo.height);
+   // var jvideo = data.video;
+    // alert(jvideo.height);
 //});
 
     
@@ -274,7 +274,7 @@
     // security restrictions, we have to use a file server with special headers
     // (CORS) - most servers don't support cross-origin browser requests.
     //
-    var url = 'http://www.uv.es/bellochc/pdf/Presentaciones%20multimedia.pdf';
+    var url = 'http://cdn.mozilla.net/pdfjs/tracemonkey.pdf';
 
     //
     // Disable workers to avoid yet another cross-origin issue (workers need the URL of
@@ -334,10 +334,10 @@
     //
     // Asynchronously download PDF as an ArrayBuffer
     //
-PDFJS.getDocument(url)
-    .then(function getPdfHelloWorld(_pdfDoc) {
+    PDFJS.getDocument(url).then(function getPdfHelloWorld(_pdfDoc) {
       pdfDoc = _pdfDoc;
       renderPage(pageNum);
+      document.onkeyup = handleArrowKeys;
     });
   </script>  
 
